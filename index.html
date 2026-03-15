@@ -560,6 +560,67 @@ footer {
 
 .footer-links a:hover { color: var(--accent); }
 
+/* CTA BLOCK */
+@keyframes ctaGlow {
+  0%, 100% { box-shadow: 0 0 20px #ff6b3515, 0 0 60px #ff6b3508; border-color: var(--border2); }
+  50% { box-shadow: 0 0 30px #ff6b3525, 0 0 80px #ff6b3512; border-color: #ff6b3540; }
+}
+.cta-block {
+  position: relative;
+  max-width: 800px;
+  margin: 60px auto 40px;
+  padding: 40px 40px;
+  background: var(--bg2);
+  border: 1px solid var(--border2);
+  border-radius: var(--radius);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 32px;
+  overflow: hidden;
+  animation: ctaGlow 3s ease-in-out infinite;
+}
+.cta-text {
+  font-family: 'Unbounded', sans-serif;
+  font-size: clamp(16px, 2.5vw, 22px);
+  font-weight: 600;
+  color: var(--text);
+  line-height: 1.4;
+  flex: 1;
+}
+.cta-text span {
+  background: linear-gradient(135deg, var(--accent), #e63b2e);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+.cta-btn {
+  flex-shrink: 0;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 18px 40px;
+  background: linear-gradient(135deg, var(--accent), #e63b2e);
+  color: #fff;
+  font-family: 'Unbounded', sans-serif;
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-decoration: none;
+  border-radius: var(--radius);
+  transition: transform 0.2s, box-shadow 0.2s;
+  white-space: nowrap;
+}
+.cta-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 40px #ff6b3550;
+}
+.cta-btn svg { width: 16px; height: 16px; fill: #fff; }
+@media (max-width: 600px) {
+  .cta-block { flex-direction: column; text-align: center; padding: 32px 24px; }
+  .cta-btn { width: 100%; justify-content: center; }
+}
+
 /* TOAST */
 .toast {
   position: fixed;
@@ -929,12 +990,16 @@ footer {
 
 </div>
 
+<div class="cta-block">
+  <div class="cta-text">Пошаговый план по выходу на первые <span>100к в ИИ</span> в 2026</div>
+  <a href="https://t.me/mastodont_aibot?start=agency" target="_blank" class="cta-btn"><svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg> ЗАБРАТЬ</a>
+</div>
+
 <footer>
   <div class="footer-brand">МАСТОДОНТ</div>
-  <div class="footer-tagline">AI и нейросети - просто, по делу, на русском</div>
+  <div class="footer-tagline">AI и нейросети - просто, по делу</div>
   <div class="footer-links">
     <a href="#" onclick="copyText('videoName', null); return false;">YouTube</a>
-    <a href="https://t.me/mastodon_ai" target="_blank">Telegram: @mastodon_ai</a>
   </div>
 </footer>
 
